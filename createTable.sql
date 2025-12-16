@@ -1,0 +1,40 @@
+use veterinaria_patitas_felices;
+
+
+CREATE TABLE duenos(
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	nombre VARCHAR(50) NOT NULL,
+	apellido VARCHAR(50) NOT NULL,
+	telefono VARCHAR(20) NOT NULL,
+	direccion VARCHAR(100)
+);
+
+
+CREATE TABLE mascotas(
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+	nombre VARCHAR(50) NOT NULL,
+	especie VARCHAR(30) NOT NULL,
+	fecha_nacimiento DATETIME,
+	id_dueno INT UNSIGNED NOT NULL,
+	FOREIGN KEY(id_dueno) REFERENCES duenos(id)
+);
+
+
+CREATE TABLE veterinarios(
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	nombre VARCHAR(50) NOT NULL,
+	apellido VARCHAR(50) NOT NULL,
+	matricula VARCHAR(20) NOT NULL UNIQUE,
+	especialidad VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE historial_clinico(
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	id_mascota INT UNSIGNED NOT NULL,
+	id_veterinario INT UNSIGNED NOT NULL,
+	fecha_registro DATETIME DEFAULT NOW() NOT NULL ,
+	descripcion VARCHAR(250) NOT NULL,
+	FOREIGN KEY(id_mascota) REFERENCES mascotas(id),	
+	FOREIGN KEY(id_veterinario) REFERENCES veterinarios(id)	
+);
