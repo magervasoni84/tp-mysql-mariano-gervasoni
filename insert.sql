@@ -15,8 +15,8 @@ INSERT INTO mascotas VALUES (NULL, "mimi", "Callejera", "2025-02-15", 1);
 
 
 -- 2 veterinarios con especialidades distintas​
-INSERT INTO veterinarios VALUES (NULL, "Juan ", "Carlos", "MP. 114524", "psicologo perruno");
-INSERT INTO veterinarios VALUES (NULL, "Eduardo ", "Fillipuzi", "MN. 112324", "Traumatologo perruno");
+INSERT INTO veterinarios VALUES (NULL, "Juan ", "Carlos", "4524", "psicologo perruno");
+INSERT INTO veterinarios VALUES (NULL, "Eduardo ", "Fillipuzi", "112324", "Traumatologo perruno");
 
 -- 3 registros de historial clínico​
 INSERT INTO historial_clinico (id_mascota,	id_veterinario,	fecha_registro,	descripcion)VALUES (1, 1, "2025-12-30", "Traumas callejeros");
