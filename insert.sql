@@ -1,9 +1,9 @@
 use veterinaria_patitas_felices;
 
---3 dueños con información completa​
+ -- 3 dueños con información completa​
 INSERT INTO duenos VALUES (NULL, "mariano", "Gerva", "111512345678", "Moreno"); 
 INSERT INTO duenos VALUES (NULL, "Camilo", "Gerva", "111512345678", "Ortuondo 54");
---Otra manera  
+-- Otra manera  
 INSERT INTO duenos(	nombre,	apellido, telefono, direccion) VALUES ("Cintia", "Ben", "111512345678", "carapa 145"); 
 
 
@@ -22,5 +22,4 @@ INSERT INTO veterinarios VALUES (NULL, "Eduardo ", "Fillipuzi", "112324", "Traum
 INSERT INTO historial_clinico (id_mascota,	id_veterinario,	fecha_registro,	descripcion)VALUES (1, 1, "2025-12-30", "Traumas callejeros");
 INSERT INTO historial_clinico (id_mascota,	id_veterinario,	fecha_registro,	descripcion)VALUES (2, 1, "2025-12-30", "Traumas callejeros");
 INSERT INTO historial_clinico (id_mascota,	id_veterinario,	fecha_registro,	descripcion)VALUES (3, 2, "2025-12-30", "Se doblo la patita");
-
 

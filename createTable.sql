@@ -16,7 +16,8 @@ CREATE TABLE mascotas(
 	especie VARCHAR(30) NOT NULL,
 	fecha_nacimiento DATETIME,
 	id_dueno INT UNSIGNED NOT NULL,
-	FOREIGN KEY(id_dueno) REFERENCES duenos(id)
+	FOREIGN KEY(id_dueno) REFERENCES duenos(id) ON DELETE CASCADE
+	 
 );
 
 
@@ -35,6 +36,7 @@ CREATE TABLE historial_clinico(
 	id_veterinario INT UNSIGNED NOT NULL,
 	fecha_registro DATETIME DEFAULT NOW() NOT NULL ,
 	descripcion VARCHAR(250) NOT NULL,
-	FOREIGN KEY(id_mascota) REFERENCES mascotas(id),	
-	FOREIGN KEY(id_veterinario) REFERENCES veterinarios(id)	
+	FOREIGN KEY(id_mascota) REFERENCES mascotas(id) ON DELETE CASCADE,	
+	FOREIGN KEY(id_veterinario) REFERENCES veterinarios(id)	ON DELETE CASCADE	
 );
+
